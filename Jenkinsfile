@@ -6,8 +6,8 @@ pipeline {
     }
 
     environment {
-        TOKEN_ID = credentials('HULK_NOTIFIER_TOKEN_ID')
-        ID = credentials('HULK_NOTIFIER_ID')
+        TOKEN_ID = credentials('SABER_COMER_NOTIFIER_TOKEN_ID')
+        ID = credentials('SABER_COMER_NOTIFIER_ID')
     }
 
     stage('Build') {
@@ -17,6 +17,8 @@ pipeline {
     }
 
     stage('Notify') {
-        sh 'curl -s -X POST https://api.telegram.org/bot${TOKEN_ID}/sendMessage -d chat_id=${ID} -d text="Notification from Jenkins"'
+        steps {
+            sh 'curl -s -X POST https://api.telegram.org/bot${TOKEN_ID}/sendMessage -d chat_id=${ID} -d text="Notification from Jenkins"'
+        }
     }
 }
