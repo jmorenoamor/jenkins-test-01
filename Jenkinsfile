@@ -19,7 +19,7 @@ pipeline {
 
         stage('Notify') {
             steps {
-                sh 'curl -s -X POST https://api.telegram.org/bot${TOKEN_ID}/sendMessage -d chat_id=${ID} -d text="${env.JOB_NAME} [${env.BUILD_NUMBER}] (${env.BUILD_URL})"'
+                sh 'curl -s -X POST https://api.telegram.org/bot${TOKEN_ID}/sendMessage -d chat_id=${ID} -d text="${JOB_NAME} [${BUILD_NUMBER}] (${BUILD_URL})"'
             }
         }
     }
