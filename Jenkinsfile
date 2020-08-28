@@ -19,7 +19,7 @@ pipeline {
 
         stage('Notify') {
             steps {
-                sh 'curl -s -X POST https://api.telegram.org/bot${TOKEN_ID}/sendMessage -d chat_id=${ID} -d text="Notification from Jenkins"'
+                sh 'curl -s -X POST https://api.telegram.org/bot${TOKEN_ID}/sendMessage -d chat_id=${ID} -d text="${env.JOB_NAME} [${env.BUILD_NUMBER}] (${env.BUILD_URL})"'
             }
         }
     }
