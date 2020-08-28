@@ -6,8 +6,8 @@ pipeline {
     }
 
     environment {
-        TOKEN_ID = credentials('SABER_COMER_NOTIFIER_TOKEN_ID')
-        ID = credentials('SABER_COMER_NOTIFIER_ID')
+        TOKEN_ID = credentials('HULK_NOTIFIER_TOKEN_ID')
+        ID = credentials('HULK_NOTIFIER_ID')
     }
 
     stages {
