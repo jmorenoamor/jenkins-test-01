@@ -13,7 +13,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'python --version'
+                sh script: 'python --version'; label: "Version"
             }
         }
 
