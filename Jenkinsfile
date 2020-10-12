@@ -27,7 +27,7 @@ pipeline {
                 sh script: '''
                     curl -X "POST" "https://api.telegram.org/bot${TOKEN_ID}/sendMessage" \
                          -H "Content-Type: application/x-www-form-urlencoded; charset=utf-8" \
-                         --data-urlencode "text=✅ *$PROJECT_NAME* branch $BRANCH_NAME \n [Detail]($RUN_DISPLAY_URL) - [Repository]($GIT_URL/tree/$BRANCH_NAME)" \
+                         --data-urlencode "text=✅ *$PROJECT_NAME* \n Successful built branch [$BRANCH_NAME]($GIT_URL/tree/$BRANCH_NAME) \n Job details [Detail]($RUN_DISPLAY_URL)" \
                          --data-urlencode "chat_id=${ID}" \
                          --data-urlencode "disable_web_page_preview=true" \
                          --data-urlencode "parse_mode=markdown"
